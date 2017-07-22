@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddCheck"></activity>
+        <activity android:name=".AddCheck" />
+        <activity android:name=".PontosActivity"></activity>
     </application>
 
 </manifest>
