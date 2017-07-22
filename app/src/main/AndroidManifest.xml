@@ -19,5 +19,4 @@
         <activity android:name=".AddCheck" />
         <activity android:name=".PontosActivity"></activity>
     </application>
-
 </manifest>

@@ -18,7 +18,7 @@ public class DBController {
         dbHelper = new DBOpenHelper(context);
     }
 
-    private boolean emailCadastrado(String email) {
+    public boolean emailCadastrado(String email) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
         String [] fields = {DBOpenHelper.TBL_CLIENTE};
@@ -29,7 +29,7 @@ public class DBController {
         return false;
     }
 
-    private int showChecks(String email) {
+    public int showChecks(String email) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
         String [] fields = {DBOpenHelper.CLIENTE_CHECKS};
@@ -38,21 +38,21 @@ public class DBController {
         return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_CHECKS)));
     }
 
-    private void zerarChecks(String email) {
+    public void zerarChecks(String email) {
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
                 + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = 0"
                 + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
     }
 
-    private void addCheck(String email) {
+    public void addCheck(String email) {
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
                 + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = " + DBOpenHelper.CLIENTE_CHECKS + " + 1"
                 + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
     }
 
-    private int showPontos(String email) {
+    public int showPontos(String email) {
         Cursor cursor;
         db = dbHelper.getWritableDatabase();
         String [] fields = {DBOpenHelper.CLIENTE_PONTOS};
@@ -61,7 +61,7 @@ public class DBController {
         return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_PONTOS)));
     }
 
-    private void addPontos(String email, String pontos) {
+    public void addPontos(String email, String pontos) {
         Cursor cursor;
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
