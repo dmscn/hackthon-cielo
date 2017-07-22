@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">hackthon-cielo</string>
-    <string name="txtAddCheck">ADD CHECK</string>
-    <string name="txtAddPonto">ADD PONTO</string>
-    <string name="txtEmail">EMAIL</string>
-    <string name="txtCheck">CHECK</string>
+    <string name="app_name">loyApp</string>
+    <string name="txtAddCheck">Add Check</string>
+    <string name="txtAddPonto">Add Ponto</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtCheck">Check</string>
     <string name="txtCad">Cadastrar</string>
     <string name="txtAddPontos">Adicionar Pontos</string>
 </resources>
