@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddCheck" />
-        <activity android:name=".PontosActivity"></activity>
+        <activity android:name=".PontosActivity" />
+        <activity android:name=".CadActivity"></activity>
     </application>
+
 </manifest>

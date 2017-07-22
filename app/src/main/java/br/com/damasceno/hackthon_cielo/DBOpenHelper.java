@@ -13,6 +13,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public static final int VERSION = 1;
 
     public static final String TBL_CLIENTE = "cliente";
+    public static final String CLIENTE_ID = "_id";
+    public static final String CLIENTE_CPF = "cpf";
     public static final String CLIENTE_EMAIL = "email";
     public static final String CLIENTE_NOME = "nome";
     public static final String CLIENTE_PONTOS = "pontos";
@@ -31,7 +33,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     private static final String CLIENTE_CREATE_TABLE = "CREATE TABLE "
             + TBL_CLIENTE + " ("
-            + CLIENTE_EMAIL + " TEXT PRIMARY KEY"
+            + CLIENTE_ID + " INTEGER PRIMARY KEY, "
+            + CLIENTE_CPF + " TEXT NOT NULL UNIQUE, "
+            + CLIENTE_EMAIL + " TEXT NOT NULL UNIQUE, "
             + CLIENTE_NOME + " TEXT NOT NULL, "
             + CLIENTE_CHECKS + " INTEGER NULL, "
             + CLIENTE_PONTOS + " INTEGER NULL);";

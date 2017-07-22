@@ -4,4 +4,6 @@
     <string name="txtAddPonto">ADD PONTO</string>
     <string name="txtEmail">EMAIL</string>
     <string name="txtCheck">CHECK</string>
+    <string name="txtCad">Cadastrar</string>
+    <string name="txtAddPontos">Adicionar Pontos</string>
 </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center">
 
     <EditText
@@ -9,16 +10,22 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtPontos"
+        android:id="@+id/edtCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtEmail"/>
+        android:layout_below="@+id/edtEmail" />
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCPF" />
 
     <Button
-        android:id="@+id/btnPontua"
+        android:id="@+id/btnCad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtPontos"
-        android:text="@string/txtAddPontos" />
+        android:layout_below="@+id/edtNome"
+        android:text="@string/txtCad" />
 
 </RelativeLayout>

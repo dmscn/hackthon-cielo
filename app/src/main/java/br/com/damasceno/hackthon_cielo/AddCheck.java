@@ -25,7 +25,7 @@ public class AddCheck extends AppCompatActivity {
                 if(db.emailCadastrado(email.toString())) {
                     db.addCheck(email.toString());
                 } else {
-                    Intent intent = new Intent(AddCheck.this, PontosActivity.class);
+                    Intent intent = new Intent(AddCheck.this, CadActivity.class);
                     startActivity(intent);
                     finish();
                 }

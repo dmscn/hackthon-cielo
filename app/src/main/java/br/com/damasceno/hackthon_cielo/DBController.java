@@ -29,6 +29,11 @@ public class DBController {
         return false;
     }
 
+    public void cadastra(String email, String cpf, String nome) {
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("INSERT INTO " + DBOpenHelper.TBL_CLIENTE + " values (" + cpf + ", " + email + " ");
+    }
+
     public int showChecks(String email) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
@@ -61,7 +66,7 @@ public class DBController {
         return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_PONTOS)));
     }
 
-    public void addPontos(String email, String pontos) {
+    public void addPontos(String email, int pontos) {
         Cursor cursor;
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
