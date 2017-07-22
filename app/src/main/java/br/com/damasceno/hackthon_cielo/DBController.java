@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.StrictMode;
 
 /**
  * Created by damasceno on 22/07/17.
@@ -20,36 +21,51 @@ public class DBController {
     private boolean emailCadastrado(String email) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
-        String[] fields = {DBOpenHelper.TBL_CLIENTE};
+        String [] fields = {DBOpenHelper.TBL_CLIENTE};
         cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, null, null, null, null, null, null);
 
-        if(cursor != null) {
-            return true;
-        }
+        if(cursor != null) return true;
 
         return false;
     }
 
-    private int contarChecks(String email) {
+    private int showChecks(String email) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
-        String[] fields = {DBOpenHelper.CLIENTE_CHECKS};
-        cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, null, null, null, null, null, null);
+        String [] fields = {DBOpenHelper.CLIENTE_CHECKS};
+        String where = DBOpenHelper.CLIENTE_EMAIL + " = " + email;
+        cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, where, null, null, null, null, null);
+        return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_CHECKS)));
     }
 
     private void zerarChecks(String email) {
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
-                + " SET " + DBOpenHelper.CLIENTE_CHECKS + " =0 " +
-                "WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
+                + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = 0"
+                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
     }
 
-    private void deletarCartao(int idCartao) {
-        // TODO
-        // deletar do banco de dados also
+    private void addCheck(String email) {
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
+                + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = " + DBOpenHelper.CLIENTE_CHECKS + " + 1"
+                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
     }
 
-    private void addCheck(String email, int idCartao) {
-        // TODO
+    private int showPontos(String email) {
+        Cursor cursor;
+        db = dbHelper.getWritableDatabase();
+        String [] fields = {DBOpenHelper.CLIENTE_PONTOS};
+        String where = DBOpenHelper.CLIENTE_EMAIL + " = " + email;
+        cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, where, null, null, null, null, null);
+        return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_PONTOS)));
+    }
+
+    private void addPontos(String email, String pontos) {
+        Cursor cursor;
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
+                + " SET " + DBOpenHelper.CLIENTE_PONTOS + " = " + DBOpenHelper.CLIENTE_PONTOS + " + " + pontos
+                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
     }
 }
