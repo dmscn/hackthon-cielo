@@ -2,5 +2,6 @@
     <string name="app_name">hackthon-cielo</string>
     <string name="txtAddCheck">ADD CHECK</string>
     <string name="txtAddPonto">ADD PONTO</string>
-
+    <string name="txtEmail">EMAIL</string>
+    <string name="txtCheck">CHECK</string>
 </resources>
