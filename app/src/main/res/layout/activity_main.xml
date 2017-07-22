@@ -4,11 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.damasceno.hackthon_cielo.MainActivity">
+    tools:context="br.com.damasceno.hackthon_cielo.MainActivity"
+    android:gravity="center">
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnAddCheck"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/txtAddCheck"/>
+
+    <Button
+        android:id="@+id/btnAddPonto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtAddPonto"
+        android:layout_below="@+id/btnAddCheck"/>
 
 </RelativeLayout>
