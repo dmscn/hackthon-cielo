@@ -38,7 +38,7 @@ public class ConsultaActivity extends AppCompatActivity {
         consulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO buscar cada dado no banco
+                // TODO buscar cada dado no banco (CPF, email, nome, checks, pontos) where CPF = CPF
 
                 layInput.setVisibility(View.GONE);
                 layInputBtn.setVisibility(View.GONE);
