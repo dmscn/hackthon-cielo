@@ -5,5 +5,8 @@
     <string name="txtEmail">Email</string>
     <string name="txtCheck">Check</string>
     <string name="txtCad">Cadastrar</string>
+    <string name="txtNome">Nome</string>
+    <string name="txtCPF">CPF</string>
+    <string name="txtPontos">Pontos</string>
     <string name="txtAddPontos">Adicionar Pontos</string>
 </resources>

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "fidelidade.db";
-    public static final int VERSION = 1;
+    public static final int VERSION = 4;
 
     public static final String TBL_CLIENTE = "cliente";
     public static final String CLIENTE_ID = "_id";
@@ -33,9 +33,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     private static final String CLIENTE_CREATE_TABLE = "CREATE TABLE "
             + TBL_CLIENTE + " ("
-            + CLIENTE_ID + " INTEGER PRIMARY KEY, "
+            + CLIENTE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + CLIENTE_CPF + " TEXT NOT NULL UNIQUE, "
-            + CLIENTE_EMAIL + " TEXT NOT NULL UNIQUE, "
+            + CLIENTE_EMAIL + " TEXT NOT NULL, "
             + CLIENTE_NOME + " TEXT NOT NULL, "
             + CLIENTE_CHECKS + " INTEGER NULL, "
             + CLIENTE_PONTOS + " INTEGER NULL);";
@@ -52,7 +52,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DELETE TABLE IF EXISTS " + TBL_CARTAO);
-        db.execSQL("DELETE TABLE IF EXISTS " + TBL_CLIENTE);
+        db.execSQL("DROP TABLE IF EXISTS " + TBL_CLIENTE);
+        db.execSQL("DROP TABLE IF EXISTS " + TBL_CARTAO);
+        onCreate(db);
     }
 }

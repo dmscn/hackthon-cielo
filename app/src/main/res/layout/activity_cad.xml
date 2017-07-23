@@ -5,27 +5,31 @@
     android:gravity="center">
 
     <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/edtCPF"
+        android:id="@+id/edtCadCPF"
+        android:hint="@string/txtCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtEmail" />
+         />
 
     <EditText
-        android:id="@+id/edtNome"
+        android:id="@+id/edtCadEmail"
+        android:hint="@string/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCPF" />
+        android:layout_below="@+id/edtCadCPF"/>
+
+    <EditText
+        android:id="@+id/edtCadNome"
+        android:hint="@string/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCadEmail" />
 
     <Button
         android:id="@+id/btnCad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtNome"
+        android:layout_below="@+id/edtCadNome"
         android:text="@string/txtCad" />
 
 </RelativeLayout>

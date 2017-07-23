@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center">
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtPontosCPF"
+        android:hint="@string/txtCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtPontos"
+        android:id="@+id/edtPontosPontos"
+        android:hint="@string/txtPontos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtEmail"/>
+        android:layout_below="@+id/edtPontosCPF"/>
 
     <Button
         android:id="@+id/btnPontua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtPontos"
+        android:layout_below="@+id/edtPontosPontos"
         android:text="@string/txtAddPontos" />
 
 </RelativeLayout>

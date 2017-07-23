@@ -8,15 +8,15 @@
     android:gravity="center">
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtCheckCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txtEmail"/>
+        android:hint="@string/txtCPF"/>
 
     <Button
         android:id="@+id/btnCheck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtCheck"
-        android:layout_below="@+id/edtEmail" />
+        android:layout_below="@+id/edtCheckCPF" />
 </RelativeLayout>

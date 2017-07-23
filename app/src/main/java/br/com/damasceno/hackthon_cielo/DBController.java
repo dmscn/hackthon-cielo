@@ -18,59 +18,71 @@ public class DBController {
         dbHelper = new DBOpenHelper(context);
     }
 
-    public boolean emailCadastrado(String email) {
+    public boolean cpfCadastrado(String cpf) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
-        String [] fields = {DBOpenHelper.TBL_CLIENTE};
-        cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, null, null, null, null, null, null);
+        String [] fields = {DBOpenHelper.CLIENTE_CPF};
+        String where = DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "'";
+        cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, where, null, null, null, null, null);
 
-        if(cursor != null) return true;
+        // cursor.moveToFirst();
 
-        return false;
+        if(cursor.moveToNext()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public void cadastra(String email, String cpf, String nome) {
+    public void cadastra(String cpf, String email, String nome) {
         db = dbHelper.getWritableDatabase();
-        db.execSQL("INSERT INTO " + DBOpenHelper.TBL_CLIENTE + " values (" + cpf + ", " + email + " ");
+        db.execSQL("INSERT INTO " + DBOpenHelper.TBL_CLIENTE + "(" + DBOpenHelper.CLIENTE_CPF + ", " +  DBOpenHelper.CLIENTE_EMAIL + ", " + DBOpenHelper.CLIENTE_NOME + ") values ('" + cpf + "', '" + email + "', '" + nome + "');");
     }
 
-    public int showChecks(String email) {
+    public int showChecks(String cpf) {
         Cursor cursor;
         db = dbHelper.getReadableDatabase();
         String [] fields = {DBOpenHelper.CLIENTE_CHECKS};
-        String where = DBOpenHelper.CLIENTE_EMAIL + " = " + email;
+        String where = DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "'";
         cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, where, null, null, null, null, null);
         return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_CHECKS)));
     }
 
-    public void zerarChecks(String email) {
+    public void zerarChecks(String cpf) {
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
                 + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = 0"
-                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
+                + " WHERE " + DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "';");
     }
 
-    public void addCheck(String email) {
+    public void addCheck(String cpf) {
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
                 + " SET " + DBOpenHelper.CLIENTE_CHECKS + " = " + DBOpenHelper.CLIENTE_CHECKS + " + 1"
-                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
+                + " WHERE " + DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "';");
     }
 
-    public int showPontos(String email) {
+    public int showPontos(String cpf) {
         Cursor cursor;
         db = dbHelper.getWritableDatabase();
         String [] fields = {DBOpenHelper.CLIENTE_PONTOS};
-        String where = DBOpenHelper.CLIENTE_EMAIL + " = " + email;
+        String where = DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "'";
         cursor = db.query(DBOpenHelper.TBL_CLIENTE, fields, where, null, null, null, null, null);
         return Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(DBOpenHelper.CLIENTE_PONTOS)));
     }
 
-    public void addPontos(String email, int pontos) {
+    public void addPontos(String cpf, int pontos) {
         Cursor cursor;
         db = dbHelper.getWritableDatabase();
         db.execSQL("UPDATE " + DBOpenHelper.TBL_CLIENTE
                 + " SET " + DBOpenHelper.CLIENTE_PONTOS + " = " + DBOpenHelper.CLIENTE_PONTOS + " + " + pontos
-                + " WHERE " + DBOpenHelper.CLIENTE_EMAIL + " = " + email + ";");
+                + " WHERE " + DBOpenHelper.CLIENTE_CPF + " = '" + cpf + "';");
+    }
+
+    public void dropData() {
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("DROP TABLE cliente;");
+        db.execSQL("DROP TABLE cartao;");
     }
 }
