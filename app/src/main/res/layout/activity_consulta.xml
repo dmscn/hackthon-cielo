@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.damasceno.hackthon_cielo.ConsultaActivity"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/edtConsultaCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
         android:hint="@string/txtCPF"/>
 
     <Button
@@ -18,5 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtCheck"
-        android:layout_below="@+id/edtConsultaCPF" />
+        android:layout_below="@+id/edtConsultaCPF"
+        android:background="@color/colorAccent"/>
 </RelativeLayout>

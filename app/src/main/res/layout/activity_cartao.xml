@@ -5,25 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.damasceno.hackthon_cielo.ConsultaActivity"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/edtCartaoChecks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/txtNumChecks"/>
+        android:hint="@string/txtNumChecks"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
 
     <EditText
         android:id="@+id/edtCartaoPremio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtPremio"
-        android:layout_below="@+id/edtCartaoChecks"/>
+        android:layout_below="@+id/edtCartaoChecks"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
 
     <Button
         android:id="@+id/btnAddCartao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtCriar"
-        android:layout_below="@+id/edtCartaoPremio" />
+        android:layout_below="@+id/edtCartaoPremio"
+        android:background="@color/colorAccent"/>
 </RelativeLayout>

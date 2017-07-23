@@ -2,34 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/edtCadCPF"
         android:hint="@string/txtCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <EditText
         android:id="@+id/edtCadEmail"
         android:hint="@string/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCadCPF"/>
+        android:layout_below="@+id/edtCadCPF"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"/>
 
     <EditText
         android:id="@+id/edtCadNome"
         android:hint="@string/txtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCadEmail" />
+        android:layout_below="@+id/edtCadEmail"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <Button
         android:id="@+id/btnCad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtCadNome"
-        android:text="@string/txtCad" />
+        android:text="@string/txtCad"
+        android:background="@color/colorAccent"/>
 
 </RelativeLayout>

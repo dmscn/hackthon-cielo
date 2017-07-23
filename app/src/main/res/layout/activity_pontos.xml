@@ -2,26 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/edtPontosCPF"
         android:hint="@string/txtCPF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <EditText
         android:id="@+id/edtPontosPontos"
         android:hint="@string/txtPontos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtPontosCPF"/>
+        android:layout_below="@+id/edtPontosCPF"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <Button
         android:id="@+id/btnPontua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtPontosPontos"
-        android:text="@string/txtAddPontos" />
+        android:text="@string/txtAddPontos"
+        android:background="@color/colorAccent"/>
 
 </RelativeLayout>
