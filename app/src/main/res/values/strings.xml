@@ -12,5 +12,6 @@
     <string name="txtNumChecks">Número de Checks</string>
     <string name="txtPremio">Prêmio</string>
     <string name="txtConsulta">Consulta</string>
+    <string name="txtVoltar">Voltar</string>
     <string name="txtAddPontos">Adicionar Pontos</string>
 </resources>

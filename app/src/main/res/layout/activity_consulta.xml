@@ -10,12 +10,13 @@
     android:background="@color/colorPrimary">
 
     <LinearLayout
+        android:id="@+id/layInput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="1"
-        android:layout_paddingRight="20dp"
-        android:layout_paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
         android:gravity="bottom">
 
         <EditText
@@ -30,6 +31,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layInputBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -40,7 +42,83 @@
             android:id="@+id/btnConsulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/txtCheck"
+            android:text="@string/txtConsulta"
+            android:layout_below="@+id/edtConsultaCPF"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layOutput"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/txtCPF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:text="@string/txtCPF"/>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:text="@string/txtEmail"/>
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:text="@string/txtNome"/>
+
+        <TextView
+            android:id="@+id/txtChecks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:text="@string/txtCheck"/>
+
+        <TextView
+            android:id="@+id/txtPontos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:text="@string/txtPontos"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layOutputBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtVoltar"
+            android:layout_gravity="bottom"
             android:layout_below="@+id/edtConsultaCPF"
             android:background="@color/colorAccent"/>
 
