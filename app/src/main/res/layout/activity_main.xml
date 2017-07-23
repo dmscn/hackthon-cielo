@@ -1,35 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.damasceno.hackthon_cielo.MainActivity"
-    android:gravity="center"
-    android:background="@color/colorPrimary">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="2">
 
-    <Button
-        android:id="@+id/btnAddCheck"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtAddCheck"
-        android:background="@color/colorAccent"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnAddPonto"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtAddPonto"
-        android:layout_below="@+id/btnAddCheck"
-        android:background="@color/colorAccent"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
-    <Button
-        android:id="@+id/btnConsulta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtConsulta"
-        android:layout_below="@+id/btnAddPonto"
-        android:background="@color/colorAccent"/>
+        <Button
+            android:id="@+id/btnAddCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAddCheck"
+            android:background="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/btnAddPonto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAddPonto"
+            android:layout_marginTop="1dp"
+            android:layout_below="@+id/btnAddCheck"
+            android:background="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/btnConsulta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtConsulta"
+            android:layout_marginTop="1dp"
+            android:layout_below="@+id/btnAddPonto"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -1,42 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="2"
     android:background="@color/colorPrimary">
 
-    <EditText
-        android:id="@+id/edtCadCPF"
-        android:hint="@string/txtCPF"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorAccent"
-        android:textColorHint="@color/colorAccent" />
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
-    <EditText
-        android:id="@+id/edtCadEmail"
-        android:hint="@string/txtEmail"
+        <EditText
+            android:id="@+id/edtCadCPF"
+            android:hint="@string/txtCPF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/edtCadEmail"
+            android:hint="@string/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtCadCPF"
+            android:backgroundTint="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"/>
+
+        <EditText
+            android:id="@+id/edtCadNome"
+            android:hint="@string/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtCadEmail"
+            android:backgroundTint="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCadCPF"
-        android:backgroundTint="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
-    <EditText
-        android:id="@+id/edtCadNome"
-        android:hint="@string/txtNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCadEmail"
-        android:backgroundTint="@color/colorAccent"
-        android:textColorHint="@color/colorAccent" />
+        <Button
+            android:id="@+id/btnCad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtCadNome"
+            android:text="@string/txtCad"
+            android:background="@color/colorAccent"/>
 
-    <Button
-        android:id="@+id/btnCad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edtCadNome"
-        android:text="@string/txtCad"
-        android:background="@color/colorAccent"/>
+    </LinearLayout>
 
-</RelativeLayout>
+
+
+
+
+</LinearLayout>
