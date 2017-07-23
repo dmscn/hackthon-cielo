@@ -4,28 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.damasceno.hackthon_cielo.MainActivity"
+    tools:context="br.com.damasceno.hackthon_cielo.ConsultaActivity"
     android:gravity="center">
 
-    <Button
-        android:id="@+id/btnAddCheck"
+    <EditText
+        android:id="@+id/edtConsultaCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txtAddCheck"/>
-
-    <Button
-        android:id="@+id/btnAddPonto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtAddPonto"
-        android:layout_below="@+id/btnAddCheck"/>
+        android:hint="@string/txtCPF"/>
 
     <Button
         android:id="@+id/btnConsulta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txtConsulta"
-        android:layout_below="@+id/btnAddPonto"/>
-
-
+        android:text="@string/txtCheck"
+        android:layout_below="@+id/edtConsultaCPF" />
 </RelativeLayout>

@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".AddCheck" />
         <activity android:name=".PontosActivity" />
-        <activity android:name=".CadActivity"></activity>
+        <activity android:name=".CadActivity" />
+        <activity android:name=".ConsultaActivity" />
+        <activity android:name=".CartaoActivity"></activity>
     </application>
 
 </manifest>

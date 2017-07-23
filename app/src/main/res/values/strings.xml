@@ -8,5 +8,6 @@
     <string name="txtNome">Nome</string>
     <string name="txtCPF">CPF</string>
     <string name="txtPontos">Pontos</string>
+    <string name="txtConsulta">Consulta</string>
     <string name="txtAddPontos">Adicionar Pontos</string>
 </resources>
