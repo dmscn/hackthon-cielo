@@ -20,6 +20,7 @@
             android:hint="@string/txtCPF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:backgroundTint="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
 
