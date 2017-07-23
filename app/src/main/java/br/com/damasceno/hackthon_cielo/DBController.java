@@ -85,4 +85,9 @@ public class DBController {
         db.execSQL("DROP TABLE cliente;");
         db.execSQL("DROP TABLE cartao;");
     }
+
+    public void criarCartao(int num, String premio) {
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("INSERT INTO " + DBOpenHelper.TBL_CARTAO + "(" + DBOpenHelper.CARTAO_NUM_CHECKS + ", " +  DBOpenHelper.CARTAO_PREMIO + ") values ('" + num + "', '" + premio + "');");
+    }
 }

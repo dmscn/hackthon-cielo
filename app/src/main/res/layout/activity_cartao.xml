@@ -7,17 +7,23 @@
     tools:context="br.com.damasceno.hackthon_cielo.ConsultaActivity"
     android:gravity="center">
 
+    <EditText
+        android:id="@+id/edtCartaoChecks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/txtNumChecks"/>
+
+    <EditText
+        android:id="@+id/edtCartaoPremio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/txtPremio"
+        android:layout_below="@+id/edtCartaoChecks"/>
+
     <Button
         android:id="@+id/btnAddCartao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txtCheck"
-        android:layout_below="@+id/edtConsultaCPF" />
-
-    <Button
-        android:id="@+id/btnConsulta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txtCheck"
-        android:layout_below="@+id/edtConsultaCPF" />
+        android:text="@string/txtCriar"
+        android:layout_below="@+id/edtCartaoPremio" />
 </RelativeLayout>
